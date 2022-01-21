@@ -1,7 +1,6 @@
 var obj = JSON.parse($response.body); 
 // 可以合并一句带过
 obj = {
-{
   "retcode" : 0,
   "errmsg" : "",
   "data" : {
@@ -402,7 +401,6 @@ obj = {
       "AppStoreMinVer" : "0.9.0"
     }
   }
-}
 }
 // 有需要全部替换的情况，只需让用户在这里如此操作即可
 
