@@ -4,78 +4,38 @@ obj = {
   "retcode" : 0,
   "errmsg" : "",
   "data" : {
-    "signed" : 0,
-    "groups" : [
-      {
-        "minup" : "0",
-        "gicon" : "V0",
-        "gname" : "游客",
-        "play_daynum" : 15,
-        "down_daynum" : 0,
-        "comment_daynum" : 0
-      },
-      {
-        "minup" : "0",
-        "gicon" : "V1",
-        "gname" : "VIP1",
-        "play_daynum" : 25,
-        "down_daynum" : 4,
-        "comment_daynum" : 5
-      },
-      {
-        "minup" : "2",
-        "gicon" : "V2",
-        "gname" : "VIP2",
-        "play_daynum" : 50,
-        "down_daynum" : 10,
-        "comment_daynum" : 10
-      },
-      {
-        "minup" : "5",
-        "gicon" : "V3",
-        "gname" : "VIP3",
-        "play_daynum" : 100,
-        "down_daynum" : 20,
-        "comment_daynum" : 15
-      },
-      {
-        "minup" : "10",
-        "gicon" : "V4",
-        "gname" : "VIP4",
-        "play_daynum" : 200,
-        "down_daynum" : 40,
-        "comment_daynum" : 20
-      },
-      {
-        "minup" : "20",
-        "gicon" : "V5",
-        "gname" : "尊贵VIP",
-        "play_daynum" : 999,
-        "down_daynum" : 100,
-        "comment_daynum" : 30
-      }
-    ],
-    "uinfo" : {
-      "curr_group" : {
-        "minup" : "20",
-        "gicon" : "V5",
-        "gid" : "5",
-        "gname" : "尊贵VIP"
-      },
-      "next_group" : {
-        "minup" : "65535",
-        "gicon" : "",
-        "gid" : "6",
-        "gname" : "禁止发言"
-      },
-      "next_upgrade_need" : 65535,
-      "down_daily_remainders" : 100,
-      "play_daily_remainders" : 984,
-      "goldcoin" : "1"
+    "appver" : {
+      "AppStoreUrls" : [
+        "http://ios.51czyd.com/kaoshi/"
+      ],
+      "tfTips" : "你的APP版本即将过期，请立即更新否则无法观看",
+      "tfUrl" : "http://ios.51czyd.com/kaoshi/",
+      "AppStor1s" : "发现重要新版本，请马上升级吧！\n1、新增加速域名，提高软件稳定性。\n2、修复已知bug\n重要提示：旧版本将停止维护，届时将无法观看，请尽快升级最新版本，造成不便敬请谅解!",
+      "tfForce" : 1,
+      "AppStoreVer" : "3.2.3",
+      "AndroidForce" : 1,
+      "AndroidUrls" : [
+        "https://www.myekor.com/15app0808-1.apk",
+        "https://www.myekor.com/15app0808-1.apk",
+        "https://app.pianmen888.com/未用2.apk",
+        "https://app.pianmen888.com/未用3.apk"
+      ],
+      "iOSForce" : 0,
+      "iOSUrl" : "http://ios.51czyd.com/kaoshi/",
+      "AndroidTips" : "发现重要新版本，请马上升级吧！\n1、提升进入app加载速度，提高软件稳定性。\n2、修复已知bug\n重要提示：旧版本将停止维护，届时将无法观看，请尽快升级最新版本，造成不便敬请谅解! ",
+      "iOSVer" : "3.2.3",
+      "iOSUrls" : [
+        "http://ios.51czyd.com/kaoshi/"
+      ],
+      "iOSTips" : "发现重要新版本，请马上升级吧！\n1、新增加速域名，提高软件稳定性。\n2、修复已知bug\n重要提示：旧版本将停止维护，届时将无法观看，请尽快升级最新版本，造成不便敬请谅解!",
+      "AndroidUrl" : "http://www.by1617.com",
+      "AndroidVer" : "3.2.1",
+      "AppStoreMinVer" : "0.9.0"
     },
-    "reqplay_addnum" : "0",
-    "reqdown_addnum" : "0",
-   "user" : {
+    "inviteCodeUrl" : "https://open.gsjbyjy.com/codetrace/request",
+    "adbypass" : 5,
+    "inviteCodeAppid" : "10001",
+    "user" : {
       "duetime" : "9999-01-22 13:43:38",
       "sysgid" : "5",
       "uid" : "10357243",
