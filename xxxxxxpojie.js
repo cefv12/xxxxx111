@@ -49,7 +49,7 @@ obj = {
       "enabled" : true,
       "port" : 0,
       "query" : "",
-      "host" : "*.xiaoxiaoapps*.com",
+      "host" : "*.xiaoxiaoapps*.com",*.hnhx360.com,*.wangbilu.com,*.umeng.com,
       "path" : ""
     }
   ],
