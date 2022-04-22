@@ -15,8 +15,6 @@ var obj = JSON.parse(body);
 const vip = '/api/app/user/info';
 const time = '/api/app/user/info';
 
-const vip = '/api/app/card/list';
-const time = '/api/app/card/list';
 
 if (url.indexOf(vip) != -1) {
 	obj.data["vipType"] = "1";
