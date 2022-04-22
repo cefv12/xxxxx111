@@ -9,7 +9,6 @@ hostname = tqrbq.mpckv.com
 **************************/
 
 var body = $response.body;
-var url = $request.url;
 var obj = JSON.parse(body);
 
 const vip = '/api/app/user/info|/api/app/card/list';
