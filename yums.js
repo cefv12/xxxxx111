@@ -13,12 +13,15 @@ var url = $request.url;
 var obj = JSON.parse(body);
 
 const vip = '/api/app/user/info';
+const time = '/api/app/user/info';
+
+const vip = '/api/app/card/list';
 const time = '/api/app/card/list';
 
 if (url.indexOf(vip) != -1) {
-	obj.data["vipType"] = "12";
-	obj.data["vipExpire"] = "2301-01-01T00:00:00Z";
-	obj.data["vipExpireTime"] = "4165516800000";
+	obj.data["vipType"] = "1";
+	obj.data["vipExpire"] = "3939-01-01T08:00:00Z";
+	obj.data["vipExpireTime"] = "62135596800";
 	obj.data["leftWatchTimes"] = "99";
 
 	body = JSON.stringify(obj);
