@@ -43,7 +43,7 @@ var obj =
     "isYearUser": "2",
     "svipAutoPayUser": "1",
     "vip3Expire": "7956867709000",
-    "vipmAutoPayUser": "1",
+    "vipmAutoPayUser": "0",
     "goSvipPage": "1",
     "experienceExpire": "7956867709000",
     "vipmIcon": "https://image.kuwo.cn/fe/34ad47f8-da7f-43e4-abdc-e6c995666368yyb.png",
