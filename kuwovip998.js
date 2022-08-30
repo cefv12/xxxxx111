@@ -5,7 +5,7 @@
 QuantumultX:
 
 [rewrite_local]
-^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) url script-response-body https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip*   url script-response-body https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
 
 [mitm]
 hostname = vip1.kuwo.cn
@@ -21,7 +21,7 @@ hostname = vip1.kuwo.cn
 
 **************************/
 var body = JSON.parse($response.body);
-var obj = {
+var obj = 
 {
   "data": {
     "luxAutoPayUser": "0",
