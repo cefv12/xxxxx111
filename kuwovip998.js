@@ -5,7 +5,7 @@
 QuantumultX:
 
 [rewrite_local]
-^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip*   url script-response-body https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
+^https*:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip*   url script-response-body https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
 
 [mitm]
 hostname = vip1.kuwo.cn
@@ -14,7 +14,7 @@ hostname = vip1.kuwo.cn
 Surge4 or Loon:
 
 [Script]
-http-response ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
+http-response ^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip*   requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
 
 [MITM]
 hostname = vip1.kuwo.cn
