@@ -2,10 +2,9 @@
 酷我音乐 解锁会员试听及部分功能
 
 ***************************
-QuantumultX:
 
 [rewrite_local]
-^https*:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip*   url script-response-body https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip*  url script-response-body https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
 
 [mitm]
 hostname = vip1.kuwo.cn
@@ -14,14 +13,17 @@ hostname = vip1.kuwo.cn
 Surge4 or Loon:
 
 [Script]
-http-response ^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip*   requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
+http-response ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/cefv12/xxxxx111/999/kuwovip998.js
 
 [MITM]
 hostname = vip1.kuwo.cn
 
 **************************/
-var body = JSON.parse($response.body);
-var obj = 
+
+var obj = JSON.parse($response.body); 
+// 可以合并一句带过
+
+obj = 
 {
   "data": {
     "luxAutoPayUser": "0",
@@ -43,7 +45,7 @@ var obj =
     "isYearUser": "2",
     "svipAutoPayUser": "1",
     "vip3Expire": "7956867709000",
-    "vipmAutoPayUser": "0",
+    "vipmAutoPayUser": "1",
     "goSvipPage": "1",
     "experienceExpire": "7956867709000",
     "vipmIcon": "https://image.kuwo.cn/fe/34ad47f8-da7f-43e4-abdc-e6c995666368yyb.png",
@@ -56,4 +58,5 @@ var obj =
   }
 };
 
-$done({ body: JSON.stringify(obj) });
+$done({body:JSON.stringify(obj)});
+// 也一句带过
