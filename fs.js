@@ -11,16 +11,27 @@ http:\/\/43.248.116.190:20251\/api\/user\/register\/account2 url script-response
 hostname = 43.248.116.190
 
 ***************************/
-
-var body = $response.body;
-var url = $request.url;
-var obj = JSON.parse(body);
-
-const elapsed = '1';
-
-if (url.indexOf(elapsed) != -1) {
-	obj["date.elapsed"] = 99999999;
-	body = JSON.stringify(obj);
+obj = 
+{
+  "status" : 1,
+  "data" : {
+    "userId" : "9a2ec0482d29454e8d8f6d7a480a0719",
+    "phone" : "",
+    "deviceId" : "193C1DBE-B8FD-497F-9C76-3CFE2287BCBF",
+    "nickname" : "漫友23077303284",
+    "lastDeviceId" : "193C1DBE-B8FD-497F-9C76-3CFE2287BCBF",
+    "status" : 1,
+    "account" : "23077303284",
+    "email" : "cefv12@qq.com",
+    "isFreeze" : 0,
+    "sex" : 0,
+    "lastAccessTime" : 1690796183291
+  },
+  "errorCode" : 0,
+  "statisticCache" : false,
+  "time" : "2023-07-31 17:36:23",
+  "elapsed" : 99
 }
+};
 
 $done({body});
