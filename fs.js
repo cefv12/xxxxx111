@@ -35,4 +35,5 @@ obj =
 }
 };
 
-$done({body});
+$done({body: JSON.stringify(obj)});
+
