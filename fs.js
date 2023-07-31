@@ -8,7 +8,6 @@ QuantumultX:
 http:\/\/43.248.116.190:20251\/api\/user\/register\/account2 url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/fs.js
 
 http:\/\/43.248.116.190:*\/api\/user\/register\/account2 url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/fs.js
-
 [mitm]
 hostname = 43.248.116.190:20251,43.248.116.190:*
 
@@ -33,7 +32,7 @@ obj =
   "errorCode" : 0,
   "statisticCache" : false,
   "time" : "2023-07-31 17:36:23",
-  "elapsed" : 99
+  "elapsed" : 2
 }
 };
 
