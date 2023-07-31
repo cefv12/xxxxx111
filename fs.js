@@ -11,6 +11,7 @@ http:\/\/43.248.116.190:20251\/api\/user\/register\/account2 url script-response
 hostname = 43.248.116.190
 
 ***************************/
+let obj = JSON.parse($response.body);
 obj = 
 {
   "status" : 1,
