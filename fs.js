@@ -7,8 +7,10 @@ QuantumultX:
 [rewrite_local]
 http:\/\/43.248.116.190:20251\/api\/user\/register\/account2 url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/fs.js
 
+http:\/\/43.248.116.190:*\/api\/user\/register\/account2 url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/fs.js
+
 [mitm]
-hostname = 43.248.116.190
+hostname = 43.248.116.190:20251,43.248.116.190:*
 
 ***************************/
 let obj = JSON.parse($response.body);
