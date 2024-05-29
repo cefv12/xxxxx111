@@ -13,7 +13,7 @@ QuantumultX:
 
 [rewrite_local]
 
-https:\/\/api.zhiyue2021.com\/apa\/user\/viewUser   url    script-response-body     https://raw.githubusercontent.com/cefv12/xxxxx111/999/tea2.js
+https:\/\/api.zhiyue2021.com\/apa\/user\/viewUser   url    script-response-body     https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai2.js
 [mitm]
 hostname = api.zhiyue2021.com
 
@@ -27,7 +27,7 @@ const wx = '/apa/user/viewUser';
 
 
 if (url.indexOf(wx) != -1) {
-	obj.["social_account_is_show"] = 1;
+	obj["social_account_is_show"] = 1;
 	obj.data["show_weixin"] = 1;
 	body = JSON.stringify(obj);
 }
