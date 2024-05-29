@@ -20,7 +20,10 @@ var obj = JSON.parse(body);
 const vip = '/apa/user/myUserInfo';
 
 if (url.indexOf(vip) != -1) {
-	obj["expiresIn"] = 99999999s;
+	obj["is_vip"] = 1;
+	obj["authentication"] = 1;
+	obj["is_vip"] = 1;
+	obj["is_vip"] = 1;
 	body = JSON.stringify(obj);
 }
 
