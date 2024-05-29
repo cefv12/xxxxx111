@@ -23,7 +23,7 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const vip = '';
+const vip = '/apa/user/myUserInfo';
 
 if (url.indexOf(vip) != -1) {
 	obj["is_vip"] = 1;
