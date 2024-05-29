@@ -24,7 +24,7 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const vip = '(/apa/user/myUserinfo|/apa/user/viewUser|/apa/user/index';
+const vip = '(/apa/user/myUserinfo|/apa/user/viewUser|/apa/user/index)';
 
 
 if (url.indexOf(vip) != -1) {
