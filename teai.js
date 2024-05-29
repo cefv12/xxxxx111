@@ -12,7 +12,7 @@ By:不轻然诺
 QuantumultX:
 
 [rewrite_local]
-https:\/\/api.zhiyue2021.com\/v1\/projects\/letsvpn-e3f4b\/installations\/ url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
+https:\/\/api.zhiyue2021.com\/apa\/user\/myUserInfo url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
 
 [mitm]
 hostname = api.zhiyue2021.com
@@ -23,7 +23,7 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const vip = '/apa/user/myUserInfo';
+const vip = '';
 
 if (url.indexOf(vip) != -1) {
 	obj["is_vip"] = 1;
