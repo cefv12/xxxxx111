@@ -24,9 +24,8 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const vip = '/apa/user/myUserinfo';
-const vi = '/apa/user/index';
-const v = '/apa/user/viewUser';
+const vip = '(/apa/user/myUserinfo|/apa/user/viewUser|/apa/user/index';
+
 
 if (url.indexOf(vip) != -1) {
 	obj.data.userInfo["is_vip"] = 1;
@@ -37,22 +36,6 @@ if (url.indexOf(vip) != -1) {
 	obj.data.userInfo["haveReadFireCount"] = 81;
 	body = JSON.stringify(obj);
 }
-if (url.indexOf(vi) != -1) {
-	obj.data.userInfo["is_vip"] = 1;
-	obj.data.userInfo["authentication"] = 1;
-	obj.data.userInfo["vip_end_time"] = 1937129600;
-	obj.data.userInfo["coin"] = 991;
-	obj.data.userInfo["viewMeCount"] = 91;
-	obj.data.userInfo["haveReadFireCount"] = 81;
-	body = JSON.stringify(obj);
-}
-if (url.indexOf(v) != -1) {
-	obj.data.userInfo["is_vip"] = 1;
-	obj.data.userInfo["authentication"] = 1;
-	obj.data.userInfo["vip_end_time"] = 1937129600;
-	obj.data.userInfo["coin"] = 991;
-	obj.data.userInfo["viewMeCount"] = 91;
-	obj.data.userInfo["haveReadFireCount"] = 81;
-	body = JSON.stringify(obj);
-}
+
+
 $done({body});
