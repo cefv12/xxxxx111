@@ -27,7 +27,7 @@ const wx = '/apa/user/viewUser';
 
 
 if (url.indexOf(wx) != -1) {
-	obj["social_account_is_show"] = 1;
+	obj.["social_account_is_show"] = 1;
 	obj.data["show_weixin"] = 1;
 	body = JSON.stringify(obj);
 }
