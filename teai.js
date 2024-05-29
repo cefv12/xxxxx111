@@ -12,7 +12,7 @@
 QuantumultX:
 
 [rewrite_local]
-https:\/\/api.zhiyue2021.com\/apa\/user\/myUserInfo url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
+https:\/\/api.zhiyue2021.com\/apa\/user\/* url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
 
 
 [mitm]
@@ -24,7 +24,7 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const vip = '/apa/user/myUserInfo';
+const vip = '/apa/user/*';
 
 if (url.indexOf(vip) != -1) {
 	obj.data.userInfo["is_vip"] = 1;
