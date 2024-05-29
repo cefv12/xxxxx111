@@ -26,12 +26,12 @@ var obj = JSON.parse(body);
 const vip = '/apa/user/myUserInfo';
 
 if (url.indexOf(vip) != -1) {
-	obj["is_vip"] = 1;
-	obj["authentication"] = 1;
-	obj["vip_end_time"] = 1937129600;
-	obj["coin"] = 991;
-	obj["viewMeCount"] = 91;
-	obj["haveReadFireCount"] = 81;
+	obj.data["is_vip"] = 1;
+	obj.data["authentication"] = 1;
+	obj.data["vip_end_time"] = 1937129600;
+	obj.data["coin"] = 991;
+	obj.data["viewMeCount"] = 91;
+	obj.data["haveReadFireCount"] = 81;
 	body = JSON.stringify(obj);
 }
 
