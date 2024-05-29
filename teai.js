@@ -13,7 +13,8 @@ QuantumultX:
 
 [rewrite_local]
 https:\/\/api.zhiyue2021.com\/apa\/user\/myUserInfo url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
-https:\/\/api.zhiyue2021.com\/apa\/user\/viewUser   url    script-response-body     https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
+
+
 [mitm]
 hostname = api.zhiyue2021.com
 
@@ -24,7 +25,6 @@ var url = $request.url;
 var obj = JSON.parse(body);
 
 const vip = '/apa/user/myUserInfo';
-const wx = '/apa/user/viewUser';
 
 if (url.indexOf(vip) != -1) {
 	obj.data.userInfo["is_vip"] = 1;
@@ -35,9 +35,5 @@ if (url.indexOf(vip) != -1) {
 	obj.data.userInfo["haveReadFireCount"] = 81;
 	body = JSON.stringify(obj);
 }
-if (url.indexOf(wx) != -1) {
-	obj.data["social_account_is_show"] = 1;
-	obj.data["show_weixin"] = 1;
-	body = JSON.stringify(obj);
-	}
+
 $done({body});
