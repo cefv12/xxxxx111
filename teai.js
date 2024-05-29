@@ -12,7 +12,7 @@
 QuantumultX:
 
 [rewrite_local]
-https:\/\/api.zhiyue2021.com\/(apa\/user\/myUserinfo|apa\/user\/viewUser|apa/user/index)  url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
+https:\/\/api.zhiyue2021.com\/(apa\/user\/myUserinfo|apa\/user\/viewUser)  url script-response-body  https://raw.githubusercontent.com/cefv12/xxxxx111/999/teai.js
 
 
 [mitm]
