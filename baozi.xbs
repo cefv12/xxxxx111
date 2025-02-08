@@ -1,8 +1,8 @@
 var rule = {
-    // 类型， 可能的取值为 '影视'、'听书'、'漫画'、'小说'
+    // 类型，可能的取值为 '影视'、'听书'、'漫画'、'小说'
     "类型": "漫画", 
-    // 标题 
-    "title": "魔改自制包子漫画",
+    // 标题
+    "title": "包子漫画",
     // 主机地址
     "host": "https://m.g-mh.org",
     // 某个页面的 URL
@@ -41,11 +41,11 @@ var rule = {
         let _id = input.split('@@')[0];
         let _url = input.split('@@')[1];
         //let mid = _url.split('/').slice(-1)[0].split('-')[0];
-        let html1 = request(_url, {headers: {Referer: 'https://godamh.com/'}});
+        let html1 = request(_url, {headers: {Referer: 'https://m.g-mh.org/ '}});
         let mid = pdfh(html1, '#chapterContent&&data-ms');
-        let html = request(`https://api-get.mgsearcher.com/api/chapter/getinfo?m=${mid}&c=${_id}`, {headers: {Referer: 'https://godamh.com/'}});
+        let html = request(`https://api-get-v2.mgsearcher.com/api/manga/getinfo?m=${mid}&c=${_id}`, {headers: {Referer: 'https://m.g-mh.org/ '}});
         let json = JSON.parse(html);
-        let re = '@Referer=https://godamh.com/';
+        let re = '@Referer=https://m.g-mh.org/ ';
         let imgs = json.data.info.images.map(it => it.url + re);
         //log(imgs);
         input = {url: 'pics://' + imgs.join('&&')};
@@ -81,7 +81,7 @@ var rule = {
             //log(input);
             let data_id = pdfh(html, '#allchapters&&data-mid');
             //log(data_id);
-            let html1 = request(`https://api-get.mgsearcher.com/api/manga/get?mid=${data_id}&mode=all`, {headers: {Referer: 'https://godamh.com/'}});
+            let html1 = request(`https://api-get-v2.mgsearcher.com/api/manga/get?mid=${data_id}&mode=all`, {headers: {Referer: 'https://godamh.com/'}});
             let json = JSON.parse(html1);
             //log(json);
             let list1 = [];
