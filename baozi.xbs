@@ -1,0 +1,108 @@
+var rule = {
+    // 类型，可能的取值为 '影视'、'听书'、'漫画'、'小说'
+    "类型": "漫画", 
+    // 标题
+    "title": "包子漫画",
+    // 主机地址
+    "host": "https://m.g-mh.org",
+    // 某个页面的 URL
+    "url": "fyclass/page/fypage",
+    // 搜索的 URL 格式
+    "searchUrl": "/s/**?page=fypage",
+    // 表示是否可搜索，2 可能代表某种特定的可搜索程度
+    "searchable": 2,
+    // 表示是否支持快速搜索，0 可能代表不支持
+    "quickSearch": 0,
+    // 表示是否可过滤，1 可能代表可以
+    "filterable": 1,
+    // 过滤相关的设置
+    "filter": "",
+    "filter_url": "",
+    "filter_def": {},
+    // HTTP 请求头中的 User-Agent 字段
+    "headers": {
+        "User-Agent": "MOBILE_UA"
+    },
+    // 超时时间，5000 毫秒
+    "timeout": 5000,
+    // 分类名称
+    "class_name": "全部",
+    // 分类的 URL
+    "class_url": "/manga",
+    // 用于解析分类的规则
+    "class_parse": ".homenavtax&&a;a&&Text;a&&href;(/manga.*-.*)",
+    // 排除的分类
+    "cate_exclude": "",
+    // 播放解析的设置
+    "play_parse": true,
+    // 懒加载的处理函数
+    "lazy": $js.toString(() => {
+        log(input);
+        let _id = input.split('@@')[0];
+        let _url = input.split('@@')[1];
+        //let mid = _url.split('/').slice(-1)[0].split('-')[0];
+        let html1 = request(_url, {headers: {Referer: 'https://godamh.com/'}});
+        let mid = pdfh(html1, '#chapterContent&&data-ms');
+        let html = request(`https://api-get.mgsearcher.com/api/chapter/getinfo?m=${mid}&c=${_id}`, {headers: {Referer: 'https://godamh.com/'}});
+        let json = JSON.parse(html);
+        let re = '@Referer=https://godamh.com/';
+        let imgs = json.data.info.images.map(it => it.url + re);
+        //log(imgs);
+        input = {url: 'pics://' + imgs.join('&&')};
+    }),
+    // 是否支持双模式
+    "double": true,
+    // 推荐的页面元素选择规则
+    "推荐": '.cardlist;.pb-2;*;*;*;*',
+    // 一级页面的相关设置
+    "一级": '.cardlist&&.pb-2;.cardtitle&&Text;img&&src;;a&&href',
+    // 二级页面的相关设置
+    "二级": {
+        // 重定向的处理函数
+        "重定向": $js.toString(() => {
+            log('执行重定向:' + MY_URL);
+            // let html = request(MY_URL);
+            MY_URL = pd(html, '#morechap&&a&&href', MY_URL);
+            log('二级重定向到:' + MY_URL);
+            html = request(MY_URL);
+        }),
+        // 标题的选择规则
+        "title": "h1&&Text",
+        // 图片的选择规则
+        "img": "img&&src",
+        // 描述的选择规则
+        "desc": "#lastchap&&Text",
+        // 内容的选择规则
+        "content": "p.text-medium&&Text",
+        // 标签页的选择规则
+        "tabs": "h2.text-medium",
+        // 列表的处理函数
+        "lists": $js.toString(() => {
+            //log(input);
+            let data_id = pdfh(html, '#allchapters&&data-mid');
+            //log(data_id);
+            let html1 = request(`https://api-get.mgsearcher.com/api/manga/get?mid=${data_id}&mode=all`, {headers: {Referer: 'https://godamh.com/'}});
+            let json = JSON.parse(html1);
+            //log(json);
+            let list1 = [];
+            let url_prefix = input.replace('chapterlist','manga');
+            json.data.chapters.forEach(it => {
+                let _tt = it.attributes.title;
+                let _slug = it.attributes.slug;
+                let _id = it.id;
+                list1.push(_tt + '$' + _id + '@@' + url_prefix + '/' + _slug);
+            });
+            LISTS = [list1];
+        }),
+        // 标签页文本的选择规则
+        "tab_text": "body&&Text",
+        // 列表文本的选择规则
+        "list_text": "body&&Text",
+        // 列表 URL 的选择规则
+        "list_url": "a&&href",
+        // 列表 URL 的前缀
+        "list_url_prefix": ""
+    },
+    // 搜索的相关设置
+    "搜索": "*"
+}
